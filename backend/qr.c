@@ -1098,6 +1098,19 @@ int qr_code(struct zint_symbol *symbol, uint8_t source[], int length)
 		symbol->row_height[i] = 1;
 	}
 
+	/* Set the human-readable text */
+	for(int i = 0; i < length; i++) {
+		if((source[i] != '[') && (source[i] != ']')) {
+			symbol->text[i] = source[i];
+		}
+		if(source[i] == '[') {
+			symbol->text[i] = '(';
+		}
+		if(source[i] == ']') {
+			symbol->text[i] = ')';
+		}
+	}
+
 	return 0;
 }
 

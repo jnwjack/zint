@@ -202,6 +202,7 @@ int is_extendable(int symbology) {
 	if(symbology == BARCODE_UPCA_CC) { return 1; }
 	if(symbology == BARCODE_UPCE_CC) { return 1; }
 	if(symbology == BARCODE_EANX_CC) { return 1; }
+	if(symbology == BARCODE_QRCODE) { return 1; }
 
 	return 0;
 }
